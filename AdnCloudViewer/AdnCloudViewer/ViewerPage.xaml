@@ -1,0 +1,73 @@
+﻿<Page
+
+    x:Class="AdnCloudViewer.ViewerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AdnCloudViewer"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+
+    mc:Ignorable="d"    
+        d:DesignWidth="1366.567"
+        d:DesignHeight="768.657">
+
+    <SwapChainBackgroundPanel x:Name="DXSwapChainPanel">      
+    </SwapChainBackgroundPanel>
+
+    <Page.BottomAppBar>
+        <AppBar 
+            x:Name="ViewerAppBar"  
+            Height="88" 
+            VerticalAlignment="Bottom" 
+            Opened="OnAppBarOpened">
+            
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel 
+                    Grid.Column="0" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Left" 
+                    VerticalAlignment="Top">
+                    
+                    <Button 
+                        x:Name="OpenModel" 
+                        Style="{StaticResource CloudModelsButtonStyle}" 
+                        Tag="Open" 
+                        Click="OnOpenButtonClicked"/>
+                    
+                    <Button 
+                        x:Name="LoadModel" 
+                        Style="{StaticResource LocalModelsButtonStyle}"
+                        Tag="Load" Click="OnLoadButtonClicked"/>
+                    
+                    <Button
+                        x:Name="CloseModel"
+                        Style="{StaticResource DeleteAppBarButtonStyle}"
+                        Tag="Close" 
+                        Click="OnCloseButtonClicked"/>
+                    
+                </StackPanel>
+
+                <StackPanel 
+                    Grid.Column="0" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top">
+                    
+                    <Button 
+                        x:Name="QuitApp" 
+                        Style="{StaticResource QuitAppBarButtonStyle}" 
+                        Tag="Quit" 
+                        Click="OnQuitButtonClicked"/>
+                </StackPanel>
+
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+</Page>
